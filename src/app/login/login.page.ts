@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, NavigationExtras } from '@angular/router';
+import { Router, NavigationExtras,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,9 @@ export class LoginPage implements OnInit {
   }
 
   constructor(
-    private router: Router
+    private router: Router,
+    private activeroute: ActivatedRoute,
+  
   ) { }
 
   ngOnInit() {
@@ -28,5 +30,9 @@ export class LoginPage implements OnInit {
 
     };
     this.router.navigate(['/home'],navigationExtras);
+  }
+
+  olvido(){
+    this.router.navigate(['reestablecer']);
   }
 }
