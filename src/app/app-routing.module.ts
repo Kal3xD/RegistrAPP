@@ -18,7 +18,11 @@ const routes: Routes = [
   {
     path: 'reestablecer',
     loadChildren: () => import('./reestablecer/reestablecer.module').then( m => m.ReestablecerPageModule)
+  },  {
+    path: 'vista-profe',
+    loadChildren: () => import('./vista-profe/vista-profe.module').then( m => m.VistaProfePageModule)
   },
+
 ];
 
 @NgModule({
