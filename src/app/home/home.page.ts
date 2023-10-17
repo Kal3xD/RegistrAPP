@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 
 
 @Component({
@@ -9,15 +10,26 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomePage {
 
+  mensaje: string = "";
+
   data: any;
   
-  constructor(private activeroute: ActivatedRoute,
-    private router: Router) 
-    {this.activeroute.queryParams.subscribe(params =>{
-    if (this.router.getCurrentNavigation()?.extras.state){
-      this.data = this.router.getCurrentNavigation()?.extras.state;
-      console.log(this.data)
-    }else{this.router.navigate(["/login"])}
-    });}
+  constructor(private activeroute: ActivatedRoute,private storage:Storage,private router: Router) 
+    {
+      this.activeroute.queryParams.subscribe(params => {
+        if(params['nombreusuario']){
+          this.mensaje= params['nombreusuario']
+        }
+        else{this.router.navigate(["/login"])}
+      })
+  }
+
+  async verStorage(){
+    let nombre = await this.storage.get("nombreUsuario");
+    console.log("El nombre usuario es "+ nombre)
+
+  }
+    
+
 
 }
