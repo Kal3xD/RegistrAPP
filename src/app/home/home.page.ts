@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Storage } from '@ionic/storage-angular';
+
 
 
 @Component({
@@ -9,27 +9,14 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  usuario: any; // Declarar una variable para almacenar los datos del usuario.
 
-  mensaje: string = "";
-
-  data: any;
+  constructor() {
+    // Recupera los datos del usuario de localStorage si están disponibles.
+    const usuarioString = localStorage.getItem('usuario');
+    if (usuarioString) {
+      this.usuario = JSON.parse(usuarioString);
+    }
+  }
   
-  constructor(private activeroute: ActivatedRoute,private storage:Storage,private router: Router) 
-    {
-      this.activeroute.queryParams.subscribe(params => {
-        if(params['nombreusuario']){
-          this.mensaje= params['nombreusuario']
-        }
-        else{this.router.navigate(["/login"])}
-      })
-  }
-
-  async verStorage(){
-    let nombre = await this.storage.get("nombreUsuario");
-    console.log("El nombre usuario es "+ nombre)
-
-  }
-    
-
-
 }

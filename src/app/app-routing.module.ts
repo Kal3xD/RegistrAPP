@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { LogueadoGuard, NoLogueadoGuard } from './logueado.guard'
+1
 const routes: Routes = [
   {
     path: 'home',
+    canActivate:[LogueadoGuard],
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
@@ -13,15 +15,34 @@ const routes: Routes = [
   },
   {
     path: 'login',
+    canActivate:[NoLogueadoGuard],
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'reestablecer',
+    canActivate:[NoLogueadoGuard],
     loadChildren: () => import('./reestablecer/reestablecer.module').then( m => m.ReestablecerPageModule)
-  },  {
+  },
+   {
+    path: 'registro',
+    canActivate:[NoLogueadoGuard],
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
     path: 'vista-profe',
+    canActivate:[LogueadoGuard],
     loadChildren: () => import('./vista-profe/vista-profe.module').then( m => m.VistaProfePageModule)
   },
+  {
+    path:'**',
+    redirectTo:'notfound'
+  },
+  {
+    path: 'notfound',
+    loadChildren: () => import('./notfound/notfound.module').then( m => m.NotfoundPageModule)
+  },
+ 
+
 
 ];
 

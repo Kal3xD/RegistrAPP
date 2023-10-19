@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Bienvenido/a {{mensaje}}
+      Bienvenido/a 
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,17 +9,18 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large"> Bienvenido/a {{mensaje}}</ion-title>
+      <ion-title size="large"> Bienvenido/a </ion-title>
+
     </ion-toolbar>
   </ion-header>
 
   <ion-list>
-    <ion-title>Bienvenido/a {{mensaje}}</ion-title>
+    <ion-title>Bienvenido/a  {{ usuario.nombre }}</ion-title>
     <ion-item></ion-item>
     
   </ion-list>
 </ion-content>
-
+<ion-button  size="large" [routerLink]="['/vista-profe']" expand="block"  >inicio</ion-button>
 <ion-footer>
   <ion-toolbar>
     <ion-title>
