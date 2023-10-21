@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../servicios/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-vista-profe',
@@ -13,7 +14,7 @@ export class VistaProfePage implements OnInit {
   listaAlumnos: any[] =[]
   listaClase: any[] =[]
 
-  constructor(private api:ApiService /*Conexión con servicio API creado */) { 
+  constructor(private router: Router,private api:ApiService /*Conexión con servicio API creado */) { 
     
 
   }
@@ -43,6 +44,11 @@ export class VistaProfePage implements OnInit {
     })
 
     
+  }
+
+  logOut(){
+    localStorage.clear()
+    this.router.navigate(['/home']); 
   }
   
 }

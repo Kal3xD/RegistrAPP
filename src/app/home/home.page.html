@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Bienvenido/a 
+      Home 
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -24,8 +24,25 @@
     <ion-icon name="construct-sharp"></ion-icon>
     <h1 >Pagina en construccion</h1>
   </ion-card>
+
+  <ion-button  size="large" [routerLink]="['/vista-profe']" expand="block"  >inicio</ion-button>
+
+  
+
+
+
+    <ion-toolbar>
+      <ion-buttons slot="end">
+        <ion-button  (click)="logOut()">
+          cerrar sesion
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  
+
+
 </ion-content>
-<ion-button  size="large" [routerLink]="['/vista-profe']" expand="block"  >inicio</ion-button>
+
 <ion-footer>
   <ion-toolbar>
     <ion-title>
