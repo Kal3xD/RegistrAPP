@@ -34,6 +34,10 @@ const routes: Routes = [
     loadChildren: () => import('./vista-profe/vista-profe.module').then( m => m.VistaProfePageModule)
   },
   {
+    path: 'genera-qr',
+    loadChildren: () => import('./genera-qr/genera-qr.module').then( m => m.GeneraQRPageModule)
+  },
+  {
     path:'**',
     redirectTo:'notfound'
   },
@@ -41,6 +45,8 @@ const routes: Routes = [
     path: 'notfound',
     loadChildren: () => import('./notfound/notfound.module').then( m => m.NotfoundPageModule)
   },
+  
+
  
 
 
