@@ -11,5 +11,26 @@
     </ion-toolbar>
   </ion-header>
 
-  
+  <ion-card>
+
+    <ion-list>
+      <ion-item>
+        <ion-select label="Seleccione Asignatura"   [(ngModel)]="preqr" placeholder="Clases">
+          <ion-select-option *ngFor="let clase of listaClase" >{{clase.nombre_clase}}</ion-select-option>
+          
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-button (click)="mostrarQR()">Generar Codigo QR</ion-button>
+    <ion-card-content *ngIf="mostrar">
+      
+      <qrcode [qrdata]="qrdata + preqr" > 
+      </qrcode>
+      
+      
+
+      
+    </ion-card-content>
+  </ion-card>
 </ion-content>
