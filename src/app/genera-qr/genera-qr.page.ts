@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 export class GeneraQRPage implements OnInit {
 
   /*Crea lista vacia para desplegar en html asociado */
-  listaAlumnos: any[] =[]
   listaClase: any[] =[]
 
   qrdata = 'Registrar asistencia en ';
@@ -41,4 +40,10 @@ export class GeneraQRPage implements OnInit {
     this.mostrar = !this.mostrar
   }
 
+  cambiarOpcion(event:any){
+    if (event.detail.value != 'opcion1'){
+      
+      this.mostrar = false;
+    }
+  }
 }

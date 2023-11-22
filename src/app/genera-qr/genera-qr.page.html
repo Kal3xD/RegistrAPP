@@ -15,7 +15,7 @@
 
     <ion-list>
       <ion-item>
-        <ion-select label="Seleccione Asignatura"   [(ngModel)]="preqr" placeholder="Clases">
+        <ion-select label="Seleccione Asignatura"  (ionChange)="cambiarOpcion($event)" [(ngModel)]="preqr" placeholder="Clases">
           <ion-select-option *ngFor="let clase of listaClase" >{{clase.nombre_clase}}</ion-select-option>
           
         </ion-select>
