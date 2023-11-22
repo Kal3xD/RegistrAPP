@@ -11,6 +11,8 @@
     </ion-toolbar>
   </ion-header>
 
+  
+
   <ion-card>
 
     <ion-list>
@@ -33,4 +35,15 @@
       
     </ion-card-content>
   </ion-card>
+
+  <ion-toolbar>
+    <ion-button [routerLink]="['/login']" >
+      volver
+    </ion-button>
+    <ion-buttons slot="end">
+      <ion-button  (click)="logOut()">
+        cerrar sesion
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-content>

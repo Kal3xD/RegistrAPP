@@ -46,4 +46,9 @@ export class GeneraQRPage implements OnInit {
       this.mostrar = false;
     }
   }
+
+  logOut(){
+    localStorage.clear()
+    this.router.navigate(['/home']); 
+  }
 }

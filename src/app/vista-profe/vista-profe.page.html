@@ -18,16 +18,7 @@
   
   <ion-content>
 
-    <ion-toolbar>
-      <ion-button [routerLink]="['/login']" >
-        volver
-      </ion-button>
-      <ion-buttons slot="end">
-        <ion-button  (click)="logOut()">
-          cerrar sesion
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
+    
    
     
   
@@ -47,6 +38,17 @@
 
     
   </ion-content>
+
+  <ion-toolbar>
+    <ion-button [routerLink]="['/login']" >
+      volver
+    </ion-button>
+    <ion-buttons slot="end">
+      <ion-button  (click)="logOut()">
+        cerrar sesion
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
 </div>
 
 
