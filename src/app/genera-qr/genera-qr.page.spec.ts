@@ -1,4 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
+import { IonicModule } from '@ionic/angular';
+import { HttpClientModule } from '@angular/common/http';
+
 import { GeneraQRPage } from './genera-qr.page';
 
 describe('GeneraQRPage', () => {
@@ -6,6 +9,11 @@ describe('GeneraQRPage', () => {
   let fixture: ComponentFixture<GeneraQRPage>;
 
   beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [GeneraQRPage],
+      imports: [IonicModule.forRoot(), HttpClientModule],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(GeneraQRPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -13,5 +21,12 @@ describe('GeneraQRPage', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should contain a button', () => {
+    const compiled = fixture.nativeElement;
+    const buttonElement = compiled.querySelector('ion-button'); // Cambia 'ion-button' por el selector real de tu botón
+
+    expect(buttonElement).toBeTruthy();
   });
 });

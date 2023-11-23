@@ -9,15 +9,15 @@ export class ApiService {
 
   constructor(private http:HttpClient) { }
 
-  urlApi="http://localhost:3000/"
+  urlApi="https://apimocha.com/registrapp/"
 
   obtenerAlumno():Observable<any>
   {
-    return this.http.get(this.urlApi +"alumnos").pipe()
+    return this.http.get("https://apimocha.com/registrapp/alumnos").pipe()
   }
 
   obtenerClase():Observable<any>
   {
-    return this.http.get(this.urlApi +"Clase").pipe()
+    return this.http.get("https://apimocha.com/registrapp/Clase").pipe()
   }
 }

@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { RegistroPage } from './registro.page';
 
 describe('RegistroPage', () => {
@@ -6,12 +6,31 @@ describe('RegistroPage', () => {
   let fixture: ComponentFixture<RegistroPage>;
 
   beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [RegistroPage], // Agrega tu componente al array de declaraciones
+    }).compileComponents();
+
     fixture = TestBed.createComponent(RegistroPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it('Crear', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Fomulario de registro', () => {
+    const compiled = fixture.nativeElement;
+    const formElement = compiled.querySelector('form');
+
+    expect(formElement).toBeTruthy();
+    
+  });
+
+  
+
+  afterEach(() => {
+    fixture.destroy();
+  });
 });
+
