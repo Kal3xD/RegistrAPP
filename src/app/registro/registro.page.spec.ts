@@ -7,7 +7,7 @@ describe('RegistroPage', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [RegistroPage], // Agrega tu componente al array de declaraciones
+      declarations: [RegistroPage], 
     }).compileComponents();
 
     fixture = TestBed.createComponent(RegistroPage);

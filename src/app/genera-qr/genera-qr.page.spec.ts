@@ -25,7 +25,7 @@ describe('GeneraQRPage', () => {
 
   it('should contain a button', () => {
     const compiled = fixture.nativeElement;
-    const buttonElement = compiled.querySelector('ion-button'); // Cambia 'ion-button' por el selector real de tu botón
+    const buttonElement = compiled.querySelector('ion-button'); 
 
     expect(buttonElement).toBeTruthy();
   });
