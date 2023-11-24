@@ -35,10 +35,12 @@ const routes: Routes = [
   },
   {
     path: 'genera-qr',
+    canActivate:[LogueadoGuard],
     loadChildren: () => import('./genera-qr/genera-qr.module').then( m => m.GeneraQRPageModule)
   },
   {
     path: 'vista-alumno',
+    canActivate:[LogueadoGuard],
     loadChildren: () => import('./vista-alumno/vista-alumno.module').then( m => m.VistaAlumnoPageModule)
   },
   {
