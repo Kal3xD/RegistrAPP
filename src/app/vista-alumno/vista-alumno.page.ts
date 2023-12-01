@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { QrscanService } from '../qrscan.service'
-
-
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
+import { QrscanService } from '../qrscan.service';
 
 @Component({
   selector: 'app-vista-alumno',
@@ -12,23 +11,35 @@ import { QrscanService } from '../qrscan.service'
 export class VistaAlumnoPage implements OnInit {
   usuario: any;
 
-  constructor(private router: Router, private qrscanservice: QrscanService) {
+  constructor(private router: Router, private qrscanservice: QrscanService, private alertController: AlertController) {
     const usuarioString = localStorage.getItem('usuario');
     if (usuarioString) {
       this.usuario = JSON.parse(usuarioString);
     }
-   }
+  }
 
   ngOnInit() {
   }
 
-  logOut(){
-    localStorage.clear()
-    this.router.navigate(['/login']); 
+  logOut() {
+    localStorage.clear();
+    this.router.navigate(['/login']);
   }
 
-  iniciarEscaneo() {
-    // Llama al método startScan del servicio cuando se haga clic en el botón
-    this.qrscanservice.startScan();
+  async iniciarEscaneo() {
+    const scannedText = await this.qrscanservice.startScan();
+    if (scannedText) {
+      this.mostrarAlerta(scannedText);
+    }
+  }
+
+  async mostrarAlerta(texto: string) {
+    const alert = await this.alertController.create({
+      header: 'Exito',
+      message: texto,
+      buttons: ['Cerrar']
+    });
+
+    await alert.present();
   }
 }
