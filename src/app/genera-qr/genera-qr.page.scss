@@ -1,4 +1,4 @@
-ion-header{
+ion-header {
     --background: var(--ion-color-primary);
     color: #fff;
     text-align: center;
@@ -22,32 +22,41 @@ ion-header{
     height: 100vh;
   }
   
-  ion-list {
+  ion-card {
+    text-align: center;
+    margin: 20px auto; 
     width: 80%;
-    max-width: 800px;
-    margin: 30px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    max-width: 600px;
   }
   
-  ion-input {
-    width: 100%;
+  ion-list {
+    width: 80%;
+    max-width: 600px; 
+    margin: auto; 
   }
   
   ion-button {
-    --background: var(--ion-color-primary);
+    --background: var(--ion-color-secondary);
     color: #fff;
     margin-top: 10px;
     font-size: 1em;
     padding: 10px 20px;
     text-transform: capitalize;
-    width: 20em;
   }
   
-  ion-footer {
+  ion-card-content {
+    margin-top: 20px;
+  }
+  
+  ion-toolbar.toolbar-footer {
     --background: var(--ion-color-dark);
     color: #fff;
     text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    ion-list {
+      width: 90%;
+    }
   }
   

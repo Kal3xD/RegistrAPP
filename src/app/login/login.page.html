@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Registrapp</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -29,8 +29,8 @@
         </form>
         <ion-button  size="large" (click)="iniciarSesion()" expand="block"  >inicio</ion-button>
        <ion-buttons slot="start">
-        <ion-button  (click)="registrar()">
-          registrarse
+        <ion-button style="color: black;" (click)="registrar()">
+          Registrarse
         </ion-button>
         <ng-container *ngIf="a" > <a [routerLink]="['/reestablecer']" >olvido su contraseña?</a></ng-container>
        </ion-buttons>

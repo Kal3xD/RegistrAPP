@@ -32,8 +32,15 @@ export class LoginPage implements OnInit {
       var usuario = JSON.parse(usuarioStr);
   
       if (usuario.usuario === f.usuario && usuario.password === f.password) {
-        this.router.navigate(['/home']); 
-        localStorage.setItem('ingresado','true');
+
+        if(usuario.tipo == "2"){
+          this.router.navigate(['/home']); 
+          localStorage.setItem('ingresado','true');
+        }else{
+          this.router.navigate(['/vista-alumno']);
+          localStorage.setItem('ingresado','true');
+        }
+
         
       } else {
         this.intentos++;

@@ -18,6 +18,8 @@ export class RegistroPage implements OnInit {
       'nombre': new FormControl("", Validators.required),
       'apellido': new FormControl("",Validators.required),
       'usuario' : new FormControl("",Validators.required),
+      'correo'  : new FormControl("",Validators.required),
+      'tipoUsuario' : new FormControl("",Validators.required),
       'password': new FormControl("",Validators.required),
       'confirmaPassword': new FormControl("",Validators.required),
       
@@ -46,7 +48,8 @@ export class RegistroPage implements OnInit {
     var usuario = {
       usuario: f.usuario,
       nombre: f.nombre,
-      password: f.password
+      password: f.password,
+      tipo: f.tipoUsuario
     }
     
     localStorage.setItem('usuario',JSON.stringify(usuario));
