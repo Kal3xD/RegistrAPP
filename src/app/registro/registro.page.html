@@ -24,9 +24,23 @@
 
     <ion-item>
       <ion-label>Usuario <ion-text color="danger">*</ion-text></ion-label>
-      <ion-input formControlName="usuario"></ion-input>
+      <ion-input formControlName="usuario" maxlength="8"></ion-input>
     </ion-item>
 
+    <ion-item>
+      <ion-label>Correo <ion-text color="danger">*</ion-text></ion-label>
+      <ion-input formControlName="correo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-select label="Tipo cuenta" label-placement="fixed" formControlName="tipoUsuario" placeholder="Selecionar tipo">
+        <ion-select-option value="1">Alumno</ion-select-option>
+        <ion-select-option value="2">Profesor</ion-select-option>
+        
+      </ion-select>
+    </ion-item>
+
+    
     <ion-item>
       <ion-label>Contraseña <ion-text color="danger">*</ion-text></ion-label>
       <ion-input formControlName="password" type="password" ></ion-input>
